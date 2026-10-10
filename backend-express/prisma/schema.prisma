@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  image       String
+  title       String
+  author      String   @default("Unknown Author")
+  synopsis    String?  @db.Text
+  content     String   @db.LongText
+  chapter     String   @default("Chapter 1")
+  totalPages  Int      @default(1)
+  rating      Float    @default(4.5)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("posts")
+}

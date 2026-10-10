@@ -1,0 +1,35 @@
+{
+  "name": "backend-express",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "db:generate": "prisma generate --config prisma7.config.ts",
+    "db:migrate": "prisma migrate deploy --config prisma7.config.ts",
+    "db:seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.6",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "multer": "^2.4.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.10.0"
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.2",
+    "mysql2": "^3.24.5"
+  }
+}
